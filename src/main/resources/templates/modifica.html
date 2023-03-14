@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>modificar</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h2>Datos a Modificar</h2>
+        <a th:href="@{/}">Regresar</a>
+        <br/>
+
+        <form th:action="@{/guardarUsuario}"
+              method="POST"
+              th:object="${usuario}">
+            <input type="hidden" name="idUsuario" th:field="*{idUsuario}"/>
+            <label for="nombre">Nombre</label><br/>
+            <input type="text" id="nombre" name="nombre" th:field="*{nombre}"><br/>
+            
+            <label for="apellido">Apellido</label><br/>
+            <input type="text" id="apellido" name="apellido" th:field="*{primApellido}"><br/>
+            
+            <label for="usuario">Usuario</label><br/>
+            <input type="text" id="usuario" name="usuario" th:field="*{user}"><br/>
+            
+            <label for="contras">Contraseña</label><br/>
+            <input type="text" id="contras" name="contras" th:field="*{password}"><br/>
+            
+            <input type="submit" name="guardar" value="Guardar"/>
+        </form>
+    </body>
+</html>
